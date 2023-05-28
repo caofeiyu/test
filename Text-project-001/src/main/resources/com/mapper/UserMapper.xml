@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.UserMapper">
+    <select id="selectLogin" resultType="User">
+        select * from ccc.user where email = #{eMaiL} AND password= #{password}
+    </select>
+    <insert id="insertUser" >
+        insert into ccc.user values (#{id},#{name},#{sex},#{eMail},#{passWord},#{idName})
+    </insert>
+    <select id="select" resultType="User">
+        select * from ccc.user
+    </select>
+    <select id="selectByIdName" resultType="User">
+        select * from ccc.user where idname=#{user}
+    </select>
+</mapper>
